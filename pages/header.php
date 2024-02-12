@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +17,7 @@
   <header class="p-3">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <i class="fa-solid fa-book-open-reader me-3"></i>
+        <i class="fa-solid fa-book-open-reader me-3 text-warning" style="font-size: 3rem;"></i>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="#" class="nav-link px-2 text-dark">Link</a></li>
@@ -22,8 +26,23 @@
         </ul>
 
         <div class="text-end">
-          <a href="pages/login.html" type="button" class="btn">Login</a>
-          <a href="pages/sign-up.html" type="button" class="btn btn-primary mx-3">Sign-up</a>
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <i class="fa-solid fa-cart-shopping position-relative text-warning me-3" style="font-size: 2.4rem;">
+                <span class="position-absolute translate-middle badge" style="font-size: 0.8rem; top: 34%; left: 56%;">0</span>
+              </i>
+            </div>
+
+            <div>
+              <?php if (isset($_SESSION["email"])) : ?>
+                <i class="fa-solid fa-user text-dark mx-3" style="font-size: 1.6rem;"></i>
+              <?php else : ?>
+                <a href="pages/login.html" class="btn">Login</a>
+                <a href="pages/sign-up.html" class="btn btn-primary mx-3">Sign-up</a>
+              <?php endif; ?>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
