@@ -22,8 +22,8 @@
         </ul>
 
         <div class="text-end">
-          <a href="login.html" type="button" class="btn">Login</a>
-          <a href="sign-up.html" type="button" class="btn btn-primary mx-3">Sign-up</a>
+          <a href="pages/login.html" type="button" class="btn">Login</a>
+          <a href="pages/sign-up.html" type="button" class="btn btn-primary mx-3">Sign-up</a>
         </div>
       </div>
     </div>

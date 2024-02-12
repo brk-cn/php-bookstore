@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($conn->query($sql) !== TRUE) {
     echo $conn->error;
   } else {
-    header("Location: index.php");
+    header("Location: pages/login.html");
     exit();
   }
 }
