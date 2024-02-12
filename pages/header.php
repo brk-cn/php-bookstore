@@ -28,9 +28,11 @@ session_start();
         <div class="text-end">
           <div class="d-flex align-items-center justify-content-between">
             <div>
-              <i class="fa-solid fa-cart-shopping position-relative text-warning me-3" style="font-size: 2.4rem;">
-                <span class="position-absolute translate-middle badge" style="font-size: 0.8rem; top: 34%; left: 56%;">0</span>
-              </i>
+              <a href="pages/cart.php" class="text-decoration-none">
+                <i class="fa-solid fa-cart-shopping position-relative text-warning me-3" style="font-size: 2.4rem;">
+                  <span id="cart-item-count" class="position-absolute translate-middle badge" style="font-size: 0.8rem; top: 34%; left: 56%;">0</span>
+                </i>
+              </a>
             </div>
 
             <div>
@@ -47,6 +49,7 @@ session_start();
       </div>
     </div>
   </header>
+
 </body>
 
 </html>

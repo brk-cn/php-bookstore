@@ -33,7 +33,7 @@ $conn->close();
             <div class="card-body">
               <h5 class="card-title text-center"><?= $book['title'] ?></h5>
               <p class="card-text text-end"><?= $book['price'] ?> $</p>
-              <button class="btn btn-primary d-block mx-auto">Add to Cart</button>
+              <button id="addToCartBtn" class=" btn btn-primary d-block mx-auto" data-book-id="<?= $book['id'] ?>">Add to Cart</button>
             </div>
           </div>
         </div>
