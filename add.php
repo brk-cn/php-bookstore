@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo $conn->error;
   }
 
-  header("Location: admin_panel.php");
+  header("Location: pages/admin_panel.php");
   exit();
   $conn->close();
 }
