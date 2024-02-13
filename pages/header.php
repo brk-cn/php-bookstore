@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+if (isset($_SESSION["shoppingCart"])) {
+  $shopping_cart = $_SESSION["shoppingCart"];
+  $total_book_count = $shopping_cart["summary"]["total_book_count"];
+} else {
+  $total_book_count = 0;
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +37,7 @@ session_start();
             <div>
               <a href="pages/cart.php" class="text-decoration-none">
                 <i class="fa-solid fa-cart-shopping position-relative text-warning me-3" style="font-size: 2.4rem;">
-                  <span id="cart-item-count" class="position-absolute translate-middle badge" style="font-size: 0.8rem; top: 34%; left: 56%;">0</span>
+                  <span class="cartBookCount position-absolute translate-middle badge" style="font-size: 0.8rem; top: 34%; left: 56%;"><?= $total_book_count ?></span>
                 </i>
               </a>
             </div>
@@ -64,6 +71,7 @@ session_start();
       </div>
     </div>
   </header>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
