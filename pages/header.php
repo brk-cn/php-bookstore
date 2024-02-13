@@ -37,7 +37,22 @@ session_start();
 
             <div>
               <?php if (isset($_SESSION["email"])) : ?>
-                <i class="fa-solid fa-user text-dark mx-3" style="font-size: 1.6rem;"></i>
+
+                <div class="flex-shrink-0 dropdown">
+                  <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-user text-dark ms-3" style="font-size: 1.6rem;"></i>
+                  </a>
+                  <ul class="dropdown-menu text-small shadow">
+                    <?php if ($_SESSION["role"] == "admin") : ?>
+                      <li><a class="dropdown-item" href="pages/admin_panel.php">Admin Panel</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                    <?php endif; ?>
+                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                  </ul>
+                </div>
+
               <?php else : ?>
                 <a href="pages/login.html" class="btn">Login</a>
                 <a href="pages/sign-up.html" class="btn btn-primary mx-3">Sign-up</a>
@@ -49,7 +64,8 @@ session_start();
       </div>
     </div>
   </header>
-
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
